@@ -69,40 +69,40 @@ void generate_waveform(){
 
     for (float i = 0.0f; i < 1.0f; i += 0.0125f) {  
             aout = i * 0.91f;                             
-            if(x_confirmed==1){                                     
+            if(x_confirmed==4){                                     
                 ThisThread::sleep_for(1ms);             
-            }else if(x_confirmed==2){
+            }else if(x_confirmed==3){
                 //ThisThread::sleep_for(50ms);
                 wait_us(500);
-            }else if(x_confirmed==3){
+            }else if(x_confirmed==2){
                 //ThisThread::sleep_for(14ms);
                 wait_us(250);
-            }else if(x_confirmed==4){
+            }else if(x_confirmed==1){
                 //ThisThread::sleep_for(5ms);
                 wait_us(125);
             }                                      
             
     }
-    if(x_confirmed==1){                                     
+    if(x_confirmed==4){                                     
         ThisThread::sleep_for(80ms);             
-    }else if(x_confirmed==2){
-        ThisThread::sleep_for(160ms);
     }else if(x_confirmed==3){
+        ThisThread::sleep_for(160ms);
+    }else if(x_confirmed==2){
         ThisThread::sleep_for(200ms);
-    }else if(x_confirmed==4){
+    }else if(x_confirmed==1){
         ThisThread::sleep_for(220ms);
     }
     for (float i = 1.0f; i > 0.0f; i -= 0.0125f) {  
             aout = i * 0.91f;                             
-            if(x_confirmed==1){                                     
+            if(x_confirmed==4){                                     
                 ThisThread::sleep_for(1ms);             
-            }else if(x_confirmed==2){
+            }else if(x_confirmed==3){
                 //ThisThread::sleep_for(50ms);
                 wait_us(500);
-            }else if(x_confirmed==3){
+            }else if(x_confirmed==2){
                 //ThisThread::sleep_for(14ms);
                 wait_us(250);
-            }else if(x_confirmed==4){
+            }else if(x_confirmed==1){
                 //ThisThread::sleep_for(5ms);
                 wait_us(125);
             }                                      
