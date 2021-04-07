@@ -63,18 +63,58 @@ void flip_down()
    queue_push.call(pusheenbutton_thread);
 }
 
-void generate_1(){
+void generate_waveform(){
     uLCD.locate(1,3);
     uLCD.printf("Confirmed!\n");
 
-
+    for (float i = 0.0f; i < 1.0f; i += 0.0125f) {  
+            aout = i * 0.91f;                             
+            if(x_confirmed==1){                                     
+                ThisThread::sleep_for(1ms);             
+            }else if(x_confirmed==2){
+                //ThisThread::sleep_for(50ms);
+                wait_us(500);
+            }else if(x_confirmed==3){
+                //ThisThread::sleep_for(14ms);
+                wait_us(250);
+            }else if(x_confirmed==4){
+                //ThisThread::sleep_for(5ms);
+                wait_us(125);
+            }                                      
+            
+    }
+    if(x_confirmed==1){                                     
+        ThisThread::sleep_for(80ms);             
+    }else if(x_confirmed==2){
+        ThisThread::sleep_for(160ms);
+    }else if(x_confirmed==3){
+        ThisThread::sleep_for(200ms);
+    }else if(x_confirmed==4){
+        ThisThread::sleep_for(220ms);
+    }
+    for (float i = 1.0f; i > 0.0f; i -= 0.0125f) {  
+            aout = i * 0.91f;                             
+            if(x_confirmed==1){                                     
+                ThisThread::sleep_for(1ms);             
+            }else if(x_confirmed==2){
+                //ThisThread::sleep_for(50ms);
+                wait_us(500);
+            }else if(x_confirmed==3){
+                //ThisThread::sleep_for(14ms);
+                wait_us(250);
+            }else if(x_confirmed==4){
+                //ThisThread::sleep_for(5ms);
+                wait_us(125);
+            }                                      
+            
+    }
 }
 
 
 void flip_confirm()
 {
    x_confirmed = x;
-   queue.call(generate_1);
+   queue.call(generate_waveform);
 }
 
 int main()
