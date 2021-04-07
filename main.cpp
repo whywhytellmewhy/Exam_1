@@ -210,6 +210,9 @@ int r=0;
         //printf("%d: %f\r\n", k,ADCdata[k]); 
         printf("%f\r\n", ADCdata[k]); 
     }
+    while(1){
+        ThisThread::sleep_for(1s);
+    }
 }
 
 
